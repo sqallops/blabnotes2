@@ -3,10 +3,26 @@
 <head>
   <title>Blabnotes2</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class= "<%= controller.controller_name %>">
+	
+	<div class="topnav">
+	<h1 class="logo"> Blabnotes</h1>
+	</div>
+
+	<div class="sidebar">
+		<ul>
+			<li> 
+			<a href="#" title="Menu Item 1"> Menu Item 1</a>
+			</li>
+			<li> 
+			<a href="#" title="Menu Item 2"> Menu Item 2</a>
+			</li>
+		</ul>
+	</div>
+
 
 <%= yield %>
 
