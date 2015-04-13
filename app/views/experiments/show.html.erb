@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @experiment.title %>
+</p>
+
+<p>
+  <strong>Procedure:</strong>
+  <%= @experiment.procedure %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @experiment.image_url %>
+</p>
+
+<p>
+  <strong>Date started:</strong>
+  <%= @experiment.date_started %>
+</p>
+
+<%= link_to 'Edit', edit_experiment_path(@experiment) %> |
+<%= link_to 'Back', experiments_path %>
