@@ -3,6 +3,11 @@ require 'test_helper'
 class ExperimentsControllerTest < ActionController::TestCase
   setup do
     @experiment = experiments(:one)
+	@update ={
+		title: 'Lorum Ipsum',
+		description: 'Wibbles are fun!',
+		image_url: 'lorem.jpg',
+	}
   end
 
   test "should get index" do
@@ -18,7 +23,7 @@ class ExperimentsControllerTest < ActionController::TestCase
 
   test "should create experiment" do
     assert_difference('Experiment.count') do
-      post :create, experiment: { date_started: @experiment.date_started, image_url: @experiment.image_url, procedure: @experiment.procedure, title: @experiment.title }
+      post :create, experiment: @update
     end
 
     assert_redirected_to experiment_path(assigns(:experiment))
@@ -35,7 +40,7 @@ class ExperimentsControllerTest < ActionController::TestCase
   end
 
   test "should update experiment" do
-    patch :update, id: @experiment, experiment: { date_started: @experiment.date_started, image_url: @experiment.image_url, procedure: @experiment.procedure, title: @experiment.title }
+    patch :update, id: @experiment, experiment: @update
     assert_redirected_to experiment_path(assigns(:experiment))
   end
 

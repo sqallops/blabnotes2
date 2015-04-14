@@ -11,3 +11,9 @@ two:
   procedure: MyText
   image_url: MyString
   date_started: 2015-04-13
+
+ruby:
+  title:   Determination of Bond Dissociation Energy
+  procedure: 
+    1mL of benzene was put into a bomb calorimeter and exploded.
+  image_url:   scheme_example.gif

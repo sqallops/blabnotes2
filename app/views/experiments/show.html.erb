@@ -1,18 +1,12 @@
+
+<div class=" viewport ">
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <h2>
   <%= @experiment.title %>
-</p>
-
-<p>
-  <strong>Procedure:</strong>
-  <%= @experiment.procedure %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @experiment.image_url %>
+  </h2>
 </p>
 
 <p>
@@ -20,5 +14,26 @@
   <%= @experiment.date_started %>
 </p>
 
+<p>
+  <strong>Scheme:</strong>
+  <div class="textbox large">
+	<%= image_tag(@experiment.image_url, class: 'list_image') %>
+	</div>
+</p>
+
+<p>
+  <strong>Procedure:</strong><br>
+  <div class="textbox large">
+	<%= @experiment.procedure %>
+	</div>
+  	
+</p>
+
+
+
+
+
 <%= link_to 'Edit', edit_experiment_path(@experiment) %> |
 <%= link_to 'Back', experiments_path %>
+
+</div>
