@@ -1,0 +1,47 @@
+<div class=" viewport ">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h2>
+  <%= @project.title %>
+  </h2>
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+</p>
+
+<p>
+  <strong>Notes:</strong><br>
+  <div class="textbox large">
+	<%= strip_tags(@project.description) %>
+	</div>
+  	
+</p>
+
+<!-- table list of experiments that belong to this project -->
+<table>
+<% # experiments listing in a table %>
+ <% @project.experiments.each do |experiment| %>
+	<tr class="<%= cycle('list_line_odd', 'list_line_even') %> ">
+		
+		<td class="date">
+			<dt>
+				<%= experiment.date_started %>
+			</dt>
+		</td>
+		
+		
+		<td class="list_description">
+			<dl>
+				<dt>
+					<%= link_to experiment.title, experiment %>
+				</dt>
+				<dd><%= truncate(strip_tags(experiment.procedure), length:160) %></dd>
+			</dl>
+			
+		</td>
+	</tr>
+<% end %>	
+</table>
+
+</div>

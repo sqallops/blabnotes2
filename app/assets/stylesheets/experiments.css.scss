@@ -23,6 +23,7 @@
 		font-family:"arial";
 		left:0;
 		background-color: #f2f2f2;
+		
 	}
 	.sidebar li{
 		list-style: none;
@@ -40,7 +41,7 @@
 		bottom: 0px;
 		right: 0px;
 		left: 0px;
-		padding-left: 10px;
+		padding-left: 100px;
 		padding-right: 0px;
 		overflow-x: auto;
 		overflow-y: auto;
@@ -51,8 +52,14 @@
 	}
 	table tr td {
 		padding: 5px;
-		vertical-align: top;
+		vertical-align: middle;
 	}
+	
+	.date {
+		text-align: center;
+		vetical-align: middle;
+	}
+	
 	.list_image{
 		width:450px;
 		height:250px;

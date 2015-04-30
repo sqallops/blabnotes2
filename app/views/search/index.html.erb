@@ -1,0 +1,56 @@
+<div class="viewport">
+
+	<h1>Search#index</h1>
+	<div class="searchform">
+		<%= form_tag experiments_path, :method => 'get' do %>
+			<p>
+				<%= text_field_tag :search, params[:search] %>
+				<%= submit_tag "Search", :name => nil %>
+			</p>
+		<% end %>
+		
+	</div>
+	
+	<br>
+	
+	#search results go underneath
+	
+	
+	
+	
+	<!-- 
+	<table>
+
+			<% # experiments listing in a table %>
+		<% @experiments.each do |experiment| %>
+		<tr class="<%= cycle('list_line_odd', 'list_line_even') %> ">
+		
+			<td class="date">
+				<dt>
+					<%= experiment.date_started %>
+				</dt>
+			</td>
+		
+			<td class="list_description">
+				<dl>
+					<dt>
+						<%= link_to experiment.title, experiment %>
+					</dt>
+					<dd><%= truncate(strip_tags(experiment.procedure), length:160) %></dd>
+				</dl>
+			
+			</td>
+		
+		
+		</tr>
+		<% end %>	
+	</table>
+	
+	-->
+	
+	
+		
+		
+
+	
+</div>

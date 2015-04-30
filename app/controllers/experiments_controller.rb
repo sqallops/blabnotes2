@@ -4,9 +4,14 @@ class ExperimentsController < ApplicationController
   # GET /experiments
   # GET /experiments.json
   def index
-    @experiments = Experiment.all
+    @experiments = Experiment.order(date_started: :desc)
+	
   end
 
+  def search
+	@experiments = Experiment.search params[:search]
+  end
+  
   # GET /experiments/1
   # GET /experiments/1.json
   def show

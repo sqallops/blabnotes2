@@ -10,15 +10,29 @@
  <% @experiments.each do |experiment| %>
 	<tr class="<%= cycle('list_line_odd', 'list_line_even') %> ">
 		
+		<td class="date">
+			<dt>
+				<%= experiment.date_started %>
+			</dt>
+		</td>
+		
 		<td class="list_description">
 			<dl>
 				<dt>
 					<%= link_to experiment.title, experiment %>
 				</dt>
 				<dd><%= truncate(strip_tags(experiment.procedure), length:160) %></dd>
-			</dl>
-			
+			</dl>	
 		</td>
+		
+		<td>
+			
+			
+			<% if not experiment.project.nil? then %>
+			<%=experiment.project.title %>
+			<% end %>
+		</td>
+		
 		
 		
 	</tr>

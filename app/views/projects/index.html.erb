@@ -1,0 +1,30 @@
+<div class="viewport">
+
+<h1>Your Projects</h1>
+
+
+
+<br>
+
+<table>
+
+<% # projects listing in a table %>
+ <% @projects.each do |project| %>
+	<tr class="<%= cycle('list_line_odd', 'list_line_even') %> ">
+		<td class="list_description">
+			<dl>
+				<dt>
+					<%= link_to project.title, project %>
+				</dt>
+				<dd><%= truncate(strip_tags(project.description), length:160) %></dd>
+			</dl>
+			
+		</td>
+	
+	</tr>
+<% end %>	
+</table>
+
+<%= link_to 'New Project', new_project_path %>
+
+</div>

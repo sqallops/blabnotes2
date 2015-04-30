@@ -7,6 +7,8 @@
   <h2>
   <%= @experiment.title %>
   </h2>
+  <%= link_to 'Edit', edit_experiment_path(@experiment) %> |
+  <%= link_to 'Back', experiments_path %>
 </p>
 
 <p>
@@ -24,16 +26,11 @@
 <p>
   <strong>Procedure:</strong><br>
   <div class="textbox large">
-	<%= @experiment.procedure %>
+	<%= strip_tags(@experiment.procedure) %>
 	</div>
   	
 </p>
 
 
-
-
-
-<%= link_to 'Edit', edit_experiment_path(@experiment) %> |
-<%= link_to 'Back', experiments_path %>
 
 </div>
