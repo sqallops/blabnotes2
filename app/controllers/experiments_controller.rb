@@ -1,11 +1,11 @@
 class ExperimentsController < ApplicationController
   before_action :set_experiment, only: [:show, :edit, :update, :destroy]
-
+  helper_method :sort_column, :sort_direction	
   # GET /experiments
   # GET /experiments.json
   def index
-    @experiments = Experiment.order(date_started: :desc)
-	
+   # @experiments = Experiment.order(date_started: :desc)
+	@experiments = Experiment.order("#{params[:sort]} DESC")
   end
 
   def search

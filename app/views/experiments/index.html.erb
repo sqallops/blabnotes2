@@ -4,11 +4,27 @@
 
 <h1>Experiments!</h1>
 
+
 <table>
 
+	<thead>
+		<tr> 
+			<th><%= link_to "Last Updated", :sort => "updated_at" %></th>
+			<th><%= link_to "Date Started", :sort => "date_started"%></th>
+			<th> Experiments</th>
+			<th> Project</th>
+		</tr>
+	</thead>
+	<tbody>
 <% # experiments listing in a table %>
  <% @experiments.each do |experiment| %>
 	<tr class="<%= cycle('list_line_odd', 'list_line_even') %> ">
+		
+		<td class="date">
+			<dt>
+				<%= experiment.updated_at %>
+			</dt>
+		</td>
 		
 		<td class="date">
 			<dt>
@@ -36,7 +52,8 @@
 		
 		
 	</tr>
-<% end %>	
+<% end %>
+</tbody>	
 </table>
 
 <br />
